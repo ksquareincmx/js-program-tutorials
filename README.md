@@ -12,6 +12,10 @@ To do that run the following command:
 npm install -g http-server
 ```
 
+## See tutorials
+
+Just go to the tutorials [directory](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/README.md) and read the one you are interested in.
+
 ## Run Examples
 
 Locate under the example you wanna run and then execute `http-server`.
