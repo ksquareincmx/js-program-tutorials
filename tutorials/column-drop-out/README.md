@@ -69,7 +69,7 @@ But what we actually want the card to have a width of 33% aprox. So we add the w
 ```diff
 .column {
   float: left;
-+  width: 33%;
++ width: 33%;
 }
 ```
 
@@ -82,7 +82,7 @@ This is because now the columns work independently and skills has no content. An
 ```diff
 .skills {
   margin-bottom: 1rem;
-+    overflow: auto;
++ overflow: auto;
 }
 ```
 
@@ -97,7 +97,7 @@ We can fix this issue giving the columns a padding of 16 pixels (left and right)
 ```diff
 .column {
   float: left;
-+  padding: 0 1rem;
++ padding: 0 1rem;
   width: 33.33%;
 }
 ```
@@ -112,7 +112,7 @@ To fix this we can use a property of `box-sizing` called `border-box`.
 
 ```diff
 .column {
-+  box-sizing: border-box;
++ box-sizing: border-box;
   float: left;
   padding: 0 1rem;
   width: 33.33%;
@@ -149,12 +149,14 @@ A media query is just a condition: if this condition is true then apply this sty
   /* ... rest of the code */
 }
 
-+ @media all and (max-width: 968px) {
-+   .column {
-+     width: 50%;
-+   }
-+ }
++@media all and (max-width: 968px) {
++  .column {
++    width: 50%;
++  }
++}
 ```
+
+So we're telling the browser: if the size of the screen is smaller than `968` pixels then set the width of every element with class column to `50%`.
 
 Now it should looks like [this](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/012-two-columns.png).
 
@@ -167,7 +169,7 @@ But now we have another problem: there's no separation between the first and the
 
 @media all and (max-width: 968px) {
   .column {
-+    margin-bottom: 16px;
++   margin-bottom: 16px;
     width: 50%;
   }
 }
@@ -188,12 +190,12 @@ To change from two columns to one we simply add another media query width the wi
   /* ... rest of the code */
 }
 
-+ @media all and (max-width: 645px) {
-+   .column {
-+     margin-bottom: 16px;
-+     width: 100%;
-+   }
-+ }
++@media all and (max-width: 645px) {
++  .column {
++    margin-bottom: 16px;
++    width: 100%;
++  }
++}
 ```
 
 And there we have it. Now it looks awesome on mobile devices.
@@ -206,6 +208,10 @@ And there we have it. Now it looks awesome on mobile devices.
 
 ### flexbox
 
-## Final Thoughts
+## Solution
+
+You can check out the solution [here](https://github.com/ksquareincmx/js-program-tutorials/tree/master/examples/column-drop-out/solution). There are three secionts: floats, inline-block elements and flexbox. These sections are commented on purpose so you can test the one that you're interested in.
+
+## Final Thoughts
 
 So which approach should you follow? Short answer: whatever fits you. Long answer: depends on the project, team, your personal knowledge of css and preferences.
