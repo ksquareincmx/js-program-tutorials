@@ -17,7 +17,7 @@ npm install -g http-server
 Locate under the example you wanna run and then execute `http-server`.
 
 ```sh
-cd mostly-fluid-layout
+cd examples/mostly-fluid-layout
 http-server -p 8080 -a localhost -c
 ```
 
