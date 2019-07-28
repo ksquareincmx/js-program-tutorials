@@ -131,14 +131,12 @@ body {
   padding: 0 1rem;
   width: 33.33%;
 }
-
 @media all and (max-width: 968px) {
   .column {
     margin-bottom: 16px;
     width: 50%;
   }
 }
-
 @media all and (max-width: 645px) {
   .column {
     margin-bottom: 16px;
@@ -150,7 +148,7 @@ body {
 /**
  * Using inline-block
  */
-
+/*
 .column {
   box-sizing: border-box;
   display: inline-block;
@@ -158,27 +156,22 @@ body {
   vertical-align: top;
   width: 33.33%;
 }
-
 .skills {
   font-size: 0;
 }
-
-/* and (min-width: 659px)
-*/
-
 @media all and (max-width: 968px) {
   .column {
     margin-bottom: 1rem;
     width: 50%;
   }
 }
-
 @media all and (max-width: 645px) {
   .column {
     margin-bottom: 1rem;
     width: 100%;
   }
 }
+*/
 
 /**
  * Using flexbox
@@ -193,18 +186,7 @@ body {
   padding: 0 1rem;
   width: 33%;
 }
-
-@media all and (max-width: 658px) {
-  .skills {
-    flex-wrap: wrap;
-  }
-  .column {
-    margin-bottom: 1rem;
-    width: 100%;
-  }
-}
-
-@media all and (min-width: 659px) and (max-width: 997px) {
+@media all and (max-width: 997px) {
   .skills {
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -212,6 +194,12 @@ body {
   .column {
     margin-bottom: 1rem;
     width: 50%;
+  }
+}
+@media all and (max-width: 658px) {
+  .column {
+    margin-bottom: 1rem;
+    width: 100%;
   }
 }
 */

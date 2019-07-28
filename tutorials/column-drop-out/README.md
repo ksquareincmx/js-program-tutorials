@@ -309,6 +309,127 @@ And that's it.
 
 ### flexbox
 
+Again, let's comment (or delete?) the code for floating and inline-block.
+
+Flexbox works a little bit different, we operate over the containers instead of the children. There are a few things that we could do with the children, but that is out of the scope of this tutorial.
+
+To use flexbox we need a flex container. A flex container is just an element with the `display` property equal to `flex` or `inline-flex`. By default flex containers have a direction (`row`), a flex wrap (`wrap`), a flex basis (`flex-wrap`) and every children is transformed into a flex item.
+
+> Note:
+>
+> [Here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)'s a comprehensive introduction to flexbox
+
+```css
+.skills {
+  display: flex;
+}
+```
+
+It should look like [this](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/015-flex-container.png).
+
+Again: we must specify a size, padding and box sizing for the cards:
+
+```diff
+.skills {
+  display: flex;
+}
++.column {
++  box-sizing: border-box;
++  padding: 0 1rem;
++  width: 33%;
++}
+```
+
+If you put attention you'll see that [the left space of the row is smaller than the right space](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/016-different-space.png). This is caused by our sizes: 33% + 33% + 33% = 99%. To compensate that we can use flexbox to evenly distribute the cards.
+
+```diff
+.skills {
+  display: flex;
++ justify-content: space-evenly;
+}
+.column {
+  /* ... rest of the code */
+}
+```
+
+And now we add the breakpoints. First tablet:
+
+```diff
+.skills {
+  /* ... rest of the code */
+}
+.column {
+  /* ... rest of the code */
+}
++@media all and (max-width: 997px) {
++  .column {
++    margin-bottom: 1rem;
++    width: 50%;
++  }
++}
+```
+
+Hmm... [now it looks like](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/017-wrong-width.png) our media query is not working. Don't worry, the code is not broken (well yeah, but technically no). Flex containers by default try to make fit all the content inside one single row. To fix that we only need to change `flex-wrap` to `wrap` to the flex container:
+
+```diff
+.skills {
+  /* ... rest of the code */
+}
+.column {
+  /* ... rest of the code */
+}
+@media all and (max-width: 997px) {
++ .skills {
++    flex-wrap: wrap;
++  }
+  .column {
+    /* ... rest of the code */
+  }
+}
+```
+
+That fixes the issue, but now the last row is centered. Flex containers by default have a property called `justify-content` equals to `center`. This will try to... well, center all the content inside the container. To fix it we just change `justify-content` to `flex-start`.
+
+```diff
+.skills {
+  /* ... rest of the code */
+}
+.column {
+  /* ... rest of the code */
+}
+@media all and (max-width: 997px) {
+ .skills {
++    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .column {
+    /* ... rest of the code */
+  }
+}
+```
+
+And voila. Now we only need to drop to one column for the mobile styles:
+
+```diff
+.skills {
+  /* ... rest of the code */
+}
+.column {
+  /* ... rest of the code */
+}
+@media all and (max-width: 997px) {
+  /* ... rest of the code */
+}
++@media all and (max-width: 658px) {
++  .column {
++    margin-bottom: 1rem;
++    width: 100%;
++  }
++}
+```
+
+And we're done.
+
 ## Solutions
 
 You can check out the solution [here](https://github.com/ksquareincmx/js-program-tutorials/tree/master/examples/column-drop-out/solution). There are three secionts: floats, inline-block elements and flexbox. These sections are commented on purpose so you can test the one that you're interested in.
