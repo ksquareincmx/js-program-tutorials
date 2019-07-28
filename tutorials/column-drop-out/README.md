@@ -156,6 +156,10 @@ A media query is just a condition: if this condition is true then apply this sty
 +}
 ```
 
+> Note:
+>
+> [Here](https://css-tricks.com/css-media-queries/)'s an introduction to media queries.
+
 So we're telling the browser: if the size of the screen is smaller than `968` pixels then set the width of every element with class column to `50%`.
 
 Now it should looks like [this](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/012-two-columns.png).
@@ -206,9 +210,106 @@ And there we have it. Now it looks awesome on mobile devices.
 
 ### inline-block elements
 
+Now let's comment (or remove?) all the code that we have written for the floating version.
+
+Every html element has a display property: `none`, `inline`, `inline-block`, `block` and flex. By default containers (div, nav, header, main, etc) have the property `display` equals to `block`. This means that two elements cannot be in the same row. So we must tell the browser to change the columns from `block` to `inline-block`.
+
+```css
+.column {
+  display: inline-block;
+}
+```
+
+> Note:
+>
+> [Here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Display)'s a list of tutorials on how to use the display property.
+
+But [now we have the same problem](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/013-wrong-card-size.png) that we had with float: the size of the column depends on the size of the content. So we just need to the the browser to apply a fixed width of `33%` to every column. And as we said earlier we need to add some spacing (padding) between the columns and the card and set `box-sizing` equal to `border-box` to subtract the `padding` from the `width`.
+
+```diff
+.column {
++ box-sizing: border-box;
+  display: inline-block;
++ padding: 0 16px;
++ width: 33%;
+}
+```
+
+We did exactly as we did on our previous example, but it's not working, why?
+
+By default `inline-block` add a little space (that has a size) between elements. There are multiple ways to fight this issue: some more elegant than others and some that involve black magic.
+
+The easiest one is to set the `font-size` of the container (parent) equals to zero, like this:
+
+```diff
+.column {
+  /* ... rest of the code */
+}
+
++.skills {
++  font-size: 0;
++}
+```
+
+Just make sure you explicitly add a font-size to any text/heading element that you have inside `.skills` or [it will dissapear](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/014-no-font-size.png).
+
+> Note:
+>
+> [Here](https://css-tricks.com/fighting-the-space-between-inline-block-elements/)'s a guide with multiple ways to eliminate the spacing between inline-block elements
+
+The only thing missing now are the breakpoints. We do as before: we drop one column at `969` pixels.
+
+```diff
+.column {
+  /* ... rest of the code */
+}
+
+.skills {
+  /* ... rest of the code */
+}
+
++@media all and (max-width: 969px) {
++  .column {
++    margin-bottom: 1rem;
++    width: 50%;
++  }
++}
+```
+
+And we drop again (from two to one) at max `646`:
+
+```diff
+.column {
+  /* ... rest of the code */
+}
+
+.skills {
+  /* ... rest of the code */
+}
+
+@media all and (min-width: 659px) and (max-width: 969px) {
+ /* ... rest of the code */
+}
+
++@media all and (max-width: 645px) {
++  .column {
++    margin-bottom: 1rem;
++    width: 100%;
++  }
++}
+```
+
+Here we must be careful: we must place our css in the right order. If we put the "mobile" query before the "tablet" query is not gonna work due to the cascading nature of css.
+
+> Note:
+>
+> [Here](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade#Cascading_order)'s a link on how the cascading nature of css works.
+
+And that's it.
+
 ### flexbox
 
-## Solution
+## Solutions
 
 You can check out the solution [here](https://github.com/ksquareincmx/js-program-tutorials/tree/master/examples/column-drop-out/solution). There are three secionts: floats, inline-block elements and flexbox. These sections are commented on purpose so you can test the one that you're interested in.
 
