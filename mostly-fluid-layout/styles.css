@@ -45,6 +45,10 @@ body {
   font-weight: lighter;
 }
 .skills {
+  overflow: auto;
+  margin-bottom: 1rem;
+}
+.skills-title {
   font-size: 30px;
   margin: 0 0 28px 0;
   text-align: center;
@@ -55,11 +59,13 @@ body {
   border-top: 4px solid #cc0200;
 }
 .card .header {
+  align-items: center;
   border-bottom: 2px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
 }
 .card .header .title {
+  font-size: 18px;
   margin: 0;
 }
 .card .header .view-more {
