@@ -112,6 +112,16 @@ body {
   width: 83.33333333333%;
 }
 
+@media all and (max-width: 769px) {
+  .wrapper {
+    width: 100%;
+  }
+  .blog {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 /**
  * Using floats
  */
@@ -127,21 +137,6 @@ body {
   .column {
     margin-bottom: 16px;
     width: 50%;
-  }
-}
-
-@media all and (max-width: 769px) {
-  .wrapper {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-
-  .blog {
-    box-sizing: border-box;
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 }
 
