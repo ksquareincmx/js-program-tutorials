@@ -1,0 +1,92 @@
+body {
+  font-family: "Sanchez";
+  margin: 0;
+  background-color: #efeee8;
+}
+.name {
+  color: #cc0200;
+  font-size: 48px;
+  margin: 48px 0 24px 0;
+  text-align: center;
+}
+.banner {
+  border-bottom: 4px solid #bebebe;
+  border-top: 4px solid #bebebe;
+  margin: 0;
+  padding: 24px 0;
+  text-align: center;
+}
+.banner .title {
+  color: #bebebe;
+  font-size: 28px;
+  margin: 0;
+}
+.blog {
+  margin: 48px 0;
+}
+.blog .title {
+  color: #000000;
+  font-size: 24px;
+  margin: 0 0 0.5rem 0;
+}
+.blog .text {
+  color: #5e5e5e;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+.blog .read-more {
+  background-color: #cc0200;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  height: 48px;
+  padding: 0 16px;
+  font-weight: lighter;
+}
+.skills {
+  font-size: 30px;
+  margin: 0 0 28px 0;
+  text-align: center;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  border-top: 4px solid #cc0200;
+}
+.card .header {
+  border-bottom: 2px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
+.card .header .title {
+  margin: 0;
+}
+.card .header .view-more {
+  color: #cc0200;
+  font-size: 12px;
+  text-decoration: none;
+}
+.card .header .view-more:hover {
+  text-decoration: underline;
+}
+.card .description {
+  border-bottom: 2px solid #e0e0e0;
+}
+.card .header,
+.card .description,
+.card .list {
+  padding: 16px;
+}
+.card .description .text,
+.card .list .text {
+  color: #000;
+  font-size: 14px;
+  margin: 0;
+}
+.card .list .text {
+  margin-bottom: 1rem;
+}
+.card .list .text:last-child {
+  margin-bottom: 0;
+}
