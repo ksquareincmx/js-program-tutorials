@@ -118,14 +118,13 @@ body {
 /**
  * inline-block elements
  */
-
 /*
 .right {
   box-sizing: border-box;
   display: inline-block;
   padding: 0 16px;
   vertical-align: top;
-  width: 39%;
+  width: 40%;
 }
 .left {
   box-sizing: border-box;
@@ -134,7 +133,9 @@ body {
   vertical-align: top;
   width: 60%;
 }
-
+.wrapper {
+  font-size: 0;
+}
 @media all and (max-width: 425px) {
   .left,
   .right {

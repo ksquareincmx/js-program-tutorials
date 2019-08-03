@@ -116,3 +116,125 @@ To do that we need to add a media query like this:
 It should look like [this](screenshots/008-one-column-mobile.png). This media queries tells the browser to stop floating elements when the device is smaller than `426px` and to set the width of the columns to `100%` (all available space).
 
 And tha's it.
+
+### inline-block elements
+
+Now let's comment (or remove?) all the code that we have written for the floating version.
+
+By default every div element has a display property set to block. That tells the divs to use all available space and don't allow other elements to be part of the same "row". First we're gonna override that behavior and set the display property to `inline-block`.
+
+```diff
++.left {
++  display: inline-block;
++}
++.right {
++  display: inline-block;
++}
+```
+
+This code is just gonna make sure two elements can be in the same row, but by default divs have a width of `100%`, so even though the two columns can technically be in the same row they take all the space they have available provoking them to stack one on top of the other. To fix that we only need to give them a fixed with that added it's not bigger to `100%`.
+
+```diff
+.right {
+  display: inline-block;
++ width: 60%;
+}
+.left {
+  display: inline-block;
++ width: 40%;
+}
+```
+
+[The columns keep stacking](screenshots/009-stacked-columns.png). This caused by `inline-block`. By default browsers add a little spacing between `inline-block` elements causing the elements to take more space adding more than `100%`. To fix this wen do two things: subtract 1 percent to any of the columns or set the container `font-size` to `0`.
+
+```diff
+.right {
+  display: inline-block;
+  width: 40%;
+}
+.left {
+  display: inline-block;
+  width: 60%;
+}
++.wrapper {
++ font-size: 0;
++}
+```
+
+[That fixes the issue](screenshots/010-no-font-size.png), but be careful: if have some element inside `wrapper` that relies on wrapper's `font-size` thru inheritance then it's gonna disappear.
+
+> Note:
+> For a deeper explanation on why this happens checkout the [column drop out tutorial](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/README.md).
+
+Now let's just add some padding between columns:
+
+```diff
+.right {
++ box-sizing: border-box;
+  display: inline-block;
++ padding: 0 16px;
+  width: 40%;
+}
+.left {
++ box-sizing: border-box;
+  display: inline-block;
++ padding: 0 16px;
+  width: 60%;
+}
+.wrapper {
+ /* rest of the code */
+}
+```
+
+[Done, space between columns added](screenshots/007-padding-fixed.png). Now if we resize our browser a little bit [we'll notice something strange](screenshots/011-no-vertical-align.png).
+
+By default every `inline` element (that includes `inline-block` elements) has a vertical alignment. In this case we need to set it to `top`.
+
+```diff
+.right {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 16px;
++ vertical-align: top;
+  width: 40%;
+}
+.left {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 16px;
++ vertical-align: top;
+  width: 60%;
+}
+.wrapper {
+ /* rest of the code */
+}
+```
+
+> Note:
+> To learn more about vertical align check out [this](https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align) page from mdn.
+
+[That fixes our alignment issue](screenshots/012-vertical-align-top.png). Now we only need to drop the right column when we're on a small device (mobile).
+
+```diff
+.right {
+ /* rest of the code */
+}
+.left {
+ /* rest of the code */
+}
+.wrapper {
+ /* rest of the code */
+}
++@media all and (max-width: 425px) {
++  .left .right {
++    width: 100%;
++  }
++  .right {
++    width: 100%;
++  }
++}
+```
+
+And we're done.
+
+## Fixed max width
