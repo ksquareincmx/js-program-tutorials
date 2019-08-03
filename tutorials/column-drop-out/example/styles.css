@@ -45,7 +45,7 @@ body {
   font-weight: lighter;
 }
 .skills {
-  overflow: auto;
+  /* overflow: auto; */
   margin-bottom: 1rem;
 }
 .skills-title {
