@@ -103,3 +103,17 @@ body {
 .book-cover {
   max-width: 100%;
 }
+
+@media all and (max-width: 425px) {
+  .left,
+  .right {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .wrapper {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}
