@@ -1,0 +1,105 @@
+body {
+  font-family: "Merriweather";
+}
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 0 16px;
+  width: 100%;
+}
+.header .logo {
+  height: 80px;
+}
+.header .nav {
+  align-items: center;
+  display: flex;
+}
+.header .nav .link {
+  color: #69c5f1;
+  font-size: 18px;
+  margin-right: 16px;
+  text-decoration: none;
+}
+.header .nav .link:hover {
+  text-decoration: underline;
+}
+.header .nav .link:last-child {
+  margin-right: 0;
+}
+.tag {
+  color: #868686;
+  font-size: 14px;
+  margin: 0;
+}
+.tag .green-mark {
+  background-color: #a2c210;
+  border-radius: 14px;
+  display: inline-block;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: middle;
+  width: 14px;
+}
+.tag .yellow-mark {
+  background-color: #f2cd2f;
+  border-radius: 14px;
+  display: inline-block;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: middle;
+  width: 14px;
+}
+.blog {
+  margin-bottom: 2rem;
+}
+.blog .title {
+  color: #000;
+  font-size: 24px;
+  margin: 8px 0;
+}
+.blog .author {
+  color: #868686;
+  font-size: 14px;
+  margin: 8px 0;
+}
+.blog .author .name {
+  color: #f87421;
+}
+.blog .text {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.blog .read-more {
+  color: #69c5f1;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+.blog .read-more:hover {
+  text-decoration: underline;
+}
+
+/** SOLUTION STARTS HERE */
+.right {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 16px;
+  vertical-align: top;
+  width: 39%;
+}
+.left {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 16px;
+  vertical-align: top;
+  width: 60%;
+}
+.book-cover {
+  max-width: 100%;
+}
