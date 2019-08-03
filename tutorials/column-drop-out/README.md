@@ -15,7 +15,7 @@ And this is how it should look like by the end of the tutorial:
 
 ## Using the example
 
-You can follow along using the example that we have [here](https://github.com/ksquareincmx/js-program-tutorials/blob/master/examples/column-drop-out/). If you need help running the example you can check out the `README` [file](https://github.com/ksquareincmx/js-program-tutorials/blob/master/README.md).
+You can follow along using the example that we have [here](https://github.com/ksquareincmx/js-program-tutorials/tree/master/tutorials/column-drop-out/example). If you need help running the example you can check out the `README` [file](https://github.com/ksquareincmx/js-program-tutorials/blob/master/README.md).
 
 ## Solution
 
