@@ -25,8 +25,6 @@ You can see the solution [here](https://github.com/ksquareincmx/js-program-tutor
 
 By default the example already comes with some css for colors and sizes. It should looke like [this](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/005-current-state.png). We're not interested on the styling of the page (that's why we're not gonna stop explaining it), but rather focus on the column drop out layout for the skills section.
 
-If you really need the explanation of the styles you can check out this [link](#todo).
-
 ## Let the fun begin
 
 There are multiple ways to create layouts using css, but we're gonna focus on just three: floats, inline-block elements and flexbox.
