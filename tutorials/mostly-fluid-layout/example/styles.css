@@ -84,3 +84,6 @@ body {
 .blog .read-more:hover {
   text-decoration: underline;
 }
+.book-cover {
+  max-width: 100%;
+}
