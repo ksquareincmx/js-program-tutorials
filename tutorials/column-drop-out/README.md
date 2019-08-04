@@ -17,10 +17,6 @@ And this is how it should look like by the end of the tutorial:
 
 You can follow along using the example that we have [here](https://github.com/ksquareincmx/js-program-tutorials/tree/master/tutorials/column-drop-out/example). If you need help running the example you can check out the `README` [file](https://github.com/ksquareincmx/js-program-tutorials/blob/master/README.md).
 
-## Solution
-
-You can see the solution [here](https://github.com/ksquareincmx/js-program-tutorials/blob/master/examples/column-drop-out/solution/)
-
 ## Current state
 
 By default the example already comes with some css for colors and sizes. It should looke like [this](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/screenshots/005-current-state.png). We're not interested on the styling of the page (that's why we're not gonna stop explaining it), but rather focus on the column drop out layout for the skills section.
@@ -430,7 +426,7 @@ And we're done.
 
 ## Solutions
 
-You can check out the solution [here](https://github.com/ksquareincmx/js-program-tutorials/tree/master/examples/column-drop-out/solution). There are three secionts: floats, inline-block elements and flexbox. These sections are commented on purpose so you can test the one that you're interested in.
+You can check out the solution [here](example/solution). There are three secionts: floats, inline-block elements and flexbox. These sections are commented on purpose so you can test the one that you're interested in.
 
 ## Final Thoughts
 
