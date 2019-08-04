@@ -16,10 +16,6 @@ This is how it should look like by the end of the tutorial:
 
 You can follow along using the example that we have [here](example/). If you need help running the example you can check out the [README](https://github.com/ksquareincmx/js-program-tutorials/blob/master/README.md) file.
 
-## Solution
-
-You can find the solution [here](example/solution/).
-
 ## Current State
 
 By default the example already comes with some css for colors and size. It should look like [this](screenshots/004-current-state.png). We're not interested on the styling of teh page (that's why we're not gonna stop explaining it), but rather focus on the column drop out layout for the skills section.
@@ -237,4 +233,100 @@ By default every `inline` element (that includes `inline-block` elements) has a 
 
 And we're done.
 
+## flexbox
+
+Let's add the basic things padding and fixed width to the columns.
+
+```diff
++.right {
++  box-sizing: border-box;
++  padding: 0 16px;
++  width: 40%;
++}
++.left {
++  box-sizing: border-box;
++  padding: 0 16px;
++  width: 60%;
++}
+```
+
+and let's set the `display` property to `flex` on the `wrapper` parent:
+
+```diff
+.left {
+    /* ... rest of the code */
+}
+.right {
+    /* ... rest of the code */
+}
++.wrapper {
++    display: flex;
++}
+```
+
+And that's pretty much it. Flexbox is gonna align them vertically to the top and will try to make them fit in the same row.
+
+> Note:
+> If you need a deeper explanation on how flexbox works checkout the [column drop out pattern](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/README.md)
+
+The only thing missing is to drop the column on mobile devices. To do that we only add the same old media query and give a fixed width of `100%` to left and right column:
+
+```diff
+.left {
+    /* ... rest of the code */
+}
+.right {
+    /* ... rest of the code */
+}
+.wrapper {
+    /* ... rest of the code */
+}
++@media all and (max-width: 425px) {
++  .left {
++    width: 100%;
++  }
++  .right {
++    width: 100%;
++  }
++}
+```
+
+> Note:
+> If you need a deeper explanation on how media queries works checkout the [column drop out pattern](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/README.md)
+
+And that should do the trick.
+
 ## Fixed max width
+
+In some really large devices like 2/3/4k monitors this patterns tend to look ["stretch out"](screenshots/013-larger-devices.png), to combat that some designers/front-end-devs tend to have a fixed max width. After certain size the `wrapper` just stops resizing (growing). To implement that we only need to add a pretty simple media query.
+
+```diff
+.left {
+    /* ... rest of the code */
+}
+.right {
+    /* ... rest of the code */
+}
+.wrapper {
+    /* ... rest of the code */
+}
+@media all and (max-width: 425px) {
+  /* ... rest of the code */
+}
++@media all and (min-width: 1200px) {
++  .wrapper {
++    margin: 0 auto;
++    width: 1200px;
++  }
++}
+```
+
+An we're done
+
+## Solutions
+
+You can check out the solutions [here](example/solution). There are three secionts: floats, inline-block elements and flexbox. These sections are commented on purpose so you can test the one that you're interested in.
+
+## Final Thoughts
+
+So which approach should you follow? Short answer: whatever fits you. Long answer: depends on the project, team, your personal knowledge of css and preferences.
