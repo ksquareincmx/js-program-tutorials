@@ -2,12 +2,12 @@
 
 ## Responsive Design
 
-- [The three pillars](#todo)
-- [Fluid Layout](#todo)
-- [Responsive Images](#todo)
+- [Introduction](tutorials/introduction/README.md)
+- [Flexible Grid Based Layout](#todo)
+- [Flexible Media](#todo)
 - [Media Queries](#todo)
 
 ### Responsive Web Design Patterns
 
-- [Mostly Fluid Layout](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/mostly-fluid-layout/README.md)
-- [Column Drop Out](https://github.com/ksquareincmx/js-program-tutorials/blob/master/tutorials/column-drop-out/README.md)
+- [Mostly Fluid Layout](tutorials/mostly-fluid-layout/README.md)
+- [Column Drop Out](tutorials/column-drop-out/README.md)
