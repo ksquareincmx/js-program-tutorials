@@ -60,12 +60,11 @@ And finally we use the `initial-scale` to tell the browser to use a ratio of `1.
 
 To fix the previous example we can add the meta tag under the `head` of our html page like this:
 
-```diff
+```html
 <head>
     <meta charset="UTF-8" />
-    -<title>No Viewport</title>
-    +<title>With Viewport</title>
-    +<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>With Viewport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 ```
 
