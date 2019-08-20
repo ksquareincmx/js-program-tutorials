@@ -7,11 +7,12 @@ Responsive web design is a technique used to build web sites that can "response"
 - Media Queires
 
 > Note:
+>
 > If you're interested in know more about RWD you can find [here](https://alistapart.com/article/responsive-web-design/) the article that started the RWD revolution.
 
 We're gonna go deep dive into each one of them, but first we must talk about viewports.
 
-## Viewport
+## Viewport
 
 [According to MDN docs](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) the viewport is "the area of the window in which web content can be seen".
 
@@ -24,6 +25,7 @@ This forces the user to do a zoom in to see the content. So, even when we use a 
 To combat this issue apple introduced the viewport meta tag, even though this is not standard almost every modern browser supports this property.
 
 > Note:
+>
 > If you wanna read more about the meta viewport tag you can checkout the [MDN documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
 
 ## Opnening a page using a mobile device
@@ -51,9 +53,10 @@ When we set `width` to `device-width` we tell the browser to stop rendering the 
 And finally we use the `initial-scale` to tell the browser to use a ratio of `1.0` between the `device-wdith` and `device-height`. We could think of this as: just don't zoom in or zoom out when you load the page.
 
 > Note:
+>
 > You can read more about the meta property on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
 
-## Adding the property
+## Adding the property
 
 To fix the previous example we can add the meta tag under the `head` of our html page like this:
 
@@ -70,6 +73,6 @@ You can find the example [here](examples/002-with-viewport.html).
 
 If we open our page using a mobile browser now it should look like [this](screenshots/002-with-viewport.png).
 
-## Other configurations
+## Other configurations
 
 We can actually use other configuration: like a specific width, a different scale ratio or even a max/min scale ratio. Even though this configurations are valid/permitted it is considered by many a bad practice.
