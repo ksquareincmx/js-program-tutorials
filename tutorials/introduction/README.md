@@ -74,4 +74,4 @@ If we open our page using a mobile browser now it should look like [this](screen
 
 ## Other configurations
 
-We can actually use other configuration: like a specific width, a different scale ratio or even a max/min scale ratio. Even though this configurations are valid/permitted it is considered by many a bad practice.
+We can actually use other configurations: like a specific width, a different scale ratio or even a max/min scale ratio. Even though this configurations are valid/permitted it is considered by many a bad practice.
